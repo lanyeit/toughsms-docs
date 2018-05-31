@@ -1,6 +1,7 @@
 - [简介](readme.md)
 - [服务支持](pages/support.md)
 - [版本发布记录](pages/versions.md)
+- [系统演示&下载](pages/download.md)
 - [安装配置指导](pages/install.md)
 - [软件授权](pages/license.md)
 - [常见问题](pages/faqs.md)
