@@ -8,5 +8,10 @@
 
 ## 下载链接
 
-[下载链接地址](http://115.159.56.13:8008/toughsms-latest-linux-x64.tar.bz2)
+- 1.0.x 版本
 
+[下载链接地址](http://toughsms-upgrade-1251458486.file.myqcloud.com/toughsms-latest-linux-x64.tar.bz2)
+
+- 1.1.x 版本
+
+[下载链接地址](http://xspeeder-radiusd-1251458486.file.myqcloud.com/toughsms-latest-linux-x64.tar.bz2)

@@ -1,6 +1,5 @@
 # 系统安装配置
 
-
 ## 操作系统环境
 
 建议 CentOS 7
@@ -31,11 +30,11 @@
 
 ## 获取最新的安装文件 
 
-最新版本文件下载地址 http://xspeeder-radiusd-1251458486.file.myqcloud.com/toughsms-latest-linux-x64.tar.bz2 
+最新版本文件下载地址 http://115.159.56.13:8008/toughsms-latest-linux-x64.tar.bz2 
 
 解压至 /opt 目录
 
-    curl http://xspeeder-radiusd-1251458486.file.myqcloud.com/toughsms-latest-linux-x64.tar.bz2 -o /opt/toughsms-linux-x64.tar.bz2
+    curl http://115.159.56.13:8008/toughsms-latest-linux-x64.tar.bz2 -o /opt/toughsms-linux-x64.tar.bz2
     cd /opt
     tar xvf toughsms-linux-x64.tar.bz2
 
@@ -72,6 +71,21 @@ python 依赖模块列表，请参见 /opt/toughsms/requirements.txt 文件，�
     
     make install
 
+该指令执行了如下过程：
+
+	groupadd toughsms
+	useradd toughsms -g toughsms -M -d /home/toughsms -s /bin/false
+	mkdir -p /home/toughsms/data
+	mkdir -p /home/toughsms/upfile
+	mkdir -p /home/toughsms/backup
+	mkdir -p /home/toughsms/logs
+	install etc/toughsmsd.conf /etc/toughsmsd.conf
+	install -m 600 etc/toughsms.env /etc/sysconfig/toughsms
+	install -m 600 etc/toughsms.service /usr/lib/systemd/system/toughsms.service
+	chown -R toughsms.toughsms /opt/toughsms
+	chown -R toughsms.toughsms /var/toughsms
+	chown -R toughsms.toughsms /home/toughsms
+	systemctl enable toughsms && systemctl daemon-reload
 
 ## 软件配置
 
@@ -83,15 +97,15 @@ python 依赖模块列表，请参见 /opt/toughsms/requirements.txt 文件，�
 
 不过在不同内存的服务器需要调整以下参数
 
-    [program:radiusd]
-    command=java -server -Xms64m -Xmx1024m -jar /opt/toughsms/bin/radiusd.jar --spring.profiles.active=prod
+    [program:radiusrpcd]
+    command=java -server -Xms64m -Xmx1024m -jar /opt/toughsms/bin/toughsms-rpcd.jar --server.port=1822
     dictionary=/opt/toughsms
     stopasgroup=true
     killasgroup=true
     startretries = 10
     autorestart = true
     redirect_stderr=true
-    stdout_logfile=/home/toughsms/logs/radiusd.log
+    stdout_logfile=/home/toughsms/logs/toughsms-rpcd.log
 
 其中 -Xms64m 是运行最小内存 -Xmx1024m 试运行最大内存，一般配置不超过一半内存。 -Xmx4096m 已经足够支撑上十万的用户缓存，该配置也与后续的软件线程池配置有关，如果修改java线程池，也可能需要修改此配置
 
@@ -142,27 +156,61 @@ python 依赖模块列表，请参见 /opt/toughsms/requirements.txt 文件，�
     # WEB 管理模块数据库配置
     TOUGHSMS_SQLA_TYPE=mysql
     TOUGHSMS_SQLA_URL=mysql://toughsms:toughsms@127.0.0.1:3306/toughsms?charset=utf8
-
+    # WEB 管理模块的RPC配置，该配置可支持分布式环境， TOUGHSMS_RPCD_BIND 是服务端监听地址， TOUGHSMS_RPCD_CONNECT是客户端连接地址
+    TOUGHSMS_RPCD_BIND="tcp://0.0.0.0:18789,tcp://0.0.0.0:18790"
+    TOUGHSMS_RPCD_CONNECT="tcp://127.0.0.1:18789,tcp://127.0.0.1:18790"
     
     # RADIUS RPC 服务数据库配置
-    RADIUS_RPCD_DBUSER=toughsms
     RADIUS_RPCD_DBPWD=toughsms
+    RADIUS_RPCD_DBUSER=toughsms
     RADIUS_RPCD_DBPOOL=60
     RADIUS_RPCD_JDBC_URL=jdbc:mysql://127.0.0.1:3306/toughsms?useUnicode=true&characterEncoding=UTF-8
-    # RADIUS RPC 服务API接口地址
+    
+    # RADIUS RPC 服务任务线程池
+    RADIUS_RPCD_TASK_POOL=2
+    # RADIUS RPC 服务 在线API接口地址
     RADIUS_RPCD_HTTP_URL=http://127.0.0.1:1822
-
+    
+    # RADIUS RPC 服务主机地址
+    RADIUS_RPCD_HOST=127.0.0.1
+    # RADIUS RPC 服务 日志debug开关 0/1
+    RADIUS_RPCD_DEBUG=0
+    #RADIUS RPC 服务 监听地址
+    RADIUS_RPCD_BIND=0.0.0.0
+    # RADIUS RPC 服务 监听端口
+    RADIUS_RPCD_PORT=1815
+    # RADIUS RPC 服务连接线程池
+    RADIUS_RPCD_IO_WORKER=4
+    # RADIUS RPC 服务消息处理线程池
+    RADIUS_RPCD_SERVICE_WORKER=32
+    # RADIUS RPC 服务每个消息线程处理的最大消息数
+    RADIUS_RPCD_WORKER_QUEUE=256
+    # RADIUS RPC 服务每个客户端的最大连接数
+    RADIUS_RPCD_CLIENT_POOL=1000
+    
+    # RADIUS 引擎主机地址
+    RADIUSD_HOSTNAME=radiusd_server
+    # RADIUS 引擎每个进程的最大连接数
+    RADIUSD_POOL=900
+    # RADIUS 引擎消息收发进程
+    RADIUSD_WORKER=4
     # RADIUS 引擎监听的UDP认证端口
     RADIUSD_AUTH_PORT=1812
     # RADIUS 引擎监听的UDP记账端口
     RADIUSD_ACCT_PORT=1813
-    # RADIUS 引擎监听的事件日志接收端口
-    RADIUSD_ACCT_PORT=1814
+    RADIUSD_IGNORE_PASSWD=0
     # RADIUS 引擎日志DEBUG开关 0/1
     RADIUSD_DEBUG=0
-    # RADIUS 上网日志存储目录
-    RADIUSD_TICKET_DIR=/home/radiusd/data/ticket
+    # RADIUS 引擎消息统计文件地址
+    RADIUSD_STAT_FILE=/home/toughsms/radiusd_stat.json
+    # RADIUS 引擎日志目录
+    RADIUSD_LOGDIR=/home/toughsms
 
+> RADIUS RPC服务端的并发控制总数 = RADIUS_RPCD_SERVICE_WORKER x RADIUS_RPCD_WORKER_QUEUE
+
+> RADIUS RPC客户端的并发控制总数 = RADIUSD_WORKER x RADIUSD_POOL
+
+> RADIUS_RPCD_CLIENT_POOL 是保留参数，以后可能隐藏或弃用，RADIUS_RPCD_CLIENT_POOL >= RADIUSD_POOL
 
 
 ## 初始化数据库
@@ -215,7 +263,4 @@ python 依赖模块列表，请参见 /opt/toughsms/requirements.txt 文件，�
     cd /opt/toughsms
     bin/upgrade latest
 
-​
-> 注意如果升级版本有数据库结构变动（参见版本说明），在升级完成后还需进入系统升级管理界面升级数据库，如图
-
-![](http://static.toughcloud.net/toughsms/tc_20180916165247_3.png)
+​    
