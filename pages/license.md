@@ -11,5 +11,5 @@
 
 进入系统授权管理界面，上传授权文件或输入授权进行激活。
 
-![](http://static.toughcloud.net/toughsms/tc_20180517194353_32.png)
+![](http://static.toughstruct.net/toughsms/tc_20180517194353_32.png)
 

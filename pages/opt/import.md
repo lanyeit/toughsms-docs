@@ -8,7 +8,7 @@
 
 在系统管理-系统设置界面可以下载模板
 
-![](http://static.toughcloud.net/toughsms/tc_20180518143910_4.png)
+![](http://static.toughstruct.net/toughsms/tc_20180518143910_4.png)
 
 
 模板是一个典型的 excel 文档, 在模板中定义了多个子页面，每个子页面定义了一组数据
@@ -22,7 +22,7 @@
 - 组织没有区域ID，设置为NA
 - 区域没有组织代码，联系人，联系手机，营业地址，营业时间，设置为NA
 
-![](http://static.toughcloud.net/toughsms/tc_20180518144102_5.png)
+![](http://static.toughstruct.net/toughsms/tc_20180518144102_5.png)
 
 #### 操作员
 
@@ -30,15 +30,15 @@
 
 - 操作员组没有组织ID，操作员ID，操作员姓名，手机，email，密码，设置为NA
 
-![](http://static.toughcloud.net/toughsms/tc_20180518151832_8.png)
+![](http://static.toughstruct.net/toughsms/tc_20180518151832_8.png)
 
 #### 终端数据
 
-![](http://static.toughcloud.net/toughsms/tc_20180518151946_9.png)
+![](http://static.toughstruct.net/toughsms/tc_20180518151946_9.png)
 
 #### 收费项目
 
-![](http://static.toughcloud.net/toughsms/tc_20180518152023_10.png)
+![](http://static.toughstruct.net/toughsms/tc_20180518152023_10.png)
 
 #### 服务商品
 
@@ -46,11 +46,11 @@
 
 注意模板中标记为NA的
 
-![](http://static.toughcloud.net/toughsms/tc_20180518152121_11.png)
+![](http://static.toughstruct.net/toughsms/tc_20180518152121_11.png)
 
 #### 用户数据
 
-![](http://static.toughcloud.net/toughsms/tc_20180518152308_12.png)
+![](http://static.toughstruct.net/toughsms/tc_20180518152308_12.png)
 
 
 > 注意所有数据的ID均为自己生成，可以利用Excel本身的功能来批量生成，注意ID的依赖关系

@@ -4,11 +4,11 @@
 
 终端设备支持单个的增加删除修改，同时支持批量导入，关于批量导入，请参考导入章节的介绍
 
-![1526524540593](http://static.toughcloud.net/toughsms/tc_20180517170347_23.png)
+![1526524540593](http://static.toughstruct.net/toughsms/tc_20180517170347_23.png)
 
 添加终端时需要具体指定区域，这样指定区域开通用户时，将会从本区域中分配终端设备，已经分配的终端，不能再修改区域等关键信息，也不允许删除。
 
-![1526524702720](http://static.toughcloud.net/toughsms/tc_20180517170438_24.png)
+![1526524702720](http://static.toughstruct.net/toughsms/tc_20180517170438_24.png)
 
 
 ## BRAS设备
@@ -24,5 +24,5 @@
   - 授权端口：接入设备提供的一个授权服务监听端口（默认3799），通过这个端口，计费系统可以主动下发授权消息，比如强制用户下线，动态下发限速。
   - 授权组织：绑定允许接入认证的组织，可多选。
 
-![1526525038661](http://static.toughcloud.net/toughsms/tc_20180517170530_25.png)
+![1526525038661](http://static.toughstruct.net/toughsms/tc_20180517170530_25.png)
 

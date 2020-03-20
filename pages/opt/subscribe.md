@@ -7,7 +7,7 @@
 
 新用户报装会同时创建新的客户信息，用户账号信息，并且订阅选定的资费商品。
 
-![](http://static.toughcloud.net/toughsms/tc_20180524122558_5.png)
+![](http://static.toughstruct.net/toughsms/tc_20180524122558_5.png)
 
 - 首先选择用户报装的组织节点和区域，完善基本信息，基本信息的一些是可选的。
 
@@ -23,4 +23,4 @@
 
 - 创建工单可选，如果输入工单信息，指派施工服务人员，会创建新的报装工单，用户处于未完成状态，等施工服务人员前往用户地址完成安装调试后，完成工单状态，用户即可进入正常可用状态。
 
-![](http://static.toughcloud.net/toughsms/tc_20180524122735_6.png)
+![](http://static.toughstruct.net/toughsms/tc_20180524122735_6.png)

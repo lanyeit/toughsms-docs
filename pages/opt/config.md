@@ -2,7 +2,7 @@
 
 ## 系统设置
 
-![](http://static.toughcloud.net/toughsms/tc_20180517161959_7.png)
+![](http://static.toughstruct.net/toughsms/tc_20180517161959_7.png)
 
 - 系统名称：当前系统名称标题
 - 系统时区：系统所在时区
@@ -14,7 +14,7 @@
 
 ## RADIUS 设置
 
-![](http://static.toughcloud.net/toughsms/tc_20180517162104_9.png)
+![](http://static.toughstruct.net/toughsms/tc_20180517162104_9.png)
 
 -  Radius记账间隔(秒)：用户认证授权下发的记账间隔时间，同时表示超过这个时间30秒未发送记账报文的在线用户会被自动清理。
 -  Radius最大会话时长(秒)：默认的用户认证授权下发的会话时长。

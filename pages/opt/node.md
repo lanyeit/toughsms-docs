@@ -6,17 +6,17 @@
 
 > 请参考业务概念-组织结构来创建你的组织。
 
-![1526291184195](http://static.toughcloud.net/toughsms/tc_20180517164825_16.png)
+![1526291184195](http://static.toughstruct.net/toughsms/tc_20180517164825_16.png)
 
 组织修改
 
-![1526528312153](http://static.toughcloud.net/toughsms/tc_20180517164849_17.png)
+![1526528312153](http://static.toughstruct.net/toughsms/tc_20180517164849_17.png)
 
 ## 区域节点
 
 对区域节点的创建修改删除，注意区域创建后，不允许修改归属组织，已经有业务数据的区域不允许删除。
 
-![1526291088174](http://static.toughcloud.net/toughsms/tc_20180517165500_21.png)
+![1526291088174](http://static.toughstruct.net/toughsms/tc_20180517165500_21.png)
 
 
 ## 操作员组
@@ -25,14 +25,14 @@
 
 >  注意：不要轻易授权非管理类操作员删除数据的权限， 建议根据职责的不同来划分
 
-![](http://static.toughcloud.net/toughsms/tc_20180517165053_19.png)
+![](http://static.toughstruct.net/toughsms/tc_20180517165053_19.png)
 
 修改权限
 
-![1526347023531](http://static.toughcloud.net/toughsms/tc_20180517164955_18.png)
+![1526347023531](http://static.toughstruct.net/toughsms/tc_20180517164955_18.png)
 
 ## 操作员
 
 操作员信息的添加删除修改，创建一个组织节点后，同时应创建相应的组织操作员，与对应的操作员组进行绑定，没有绑定操作员组的操作员不能进行任何业务受理和其他功能操作。
 
-![1526347485396](http://static.toughcloud.net/toughsms/tc_20180517165139_20.png)
+![1526347485396](http://static.toughstruct.net/toughsms/tc_20180517165139_20.png)

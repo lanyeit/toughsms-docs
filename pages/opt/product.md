@@ -7,7 +7,7 @@
 
 > 注意：修改默认属性名称可能导致一些功能失效
 
-![1526525594873](http://static.toughcloud.net/toughsms/tc_20180517170740_26.png)
+![1526525594873](http://static.toughstruct.net/toughsms/tc_20180517170740_26.png)
 
 
 
@@ -15,11 +15,11 @@
 
 在新建商品资费之前必须配置服务，根据运营需求创建需要的服务，并配置服务的关键属性
 
-![1526527443671](http://static.toughcloud.net/toughsms/tc_20180517170826_27.png)
+![1526527443671](http://static.toughstruct.net/toughsms/tc_20180517170826_27.png)
 
 配置服务属性，通常来说在线数限制，上行下行速率大小是必须配置的三项，对于大部分BRAS接入设备都够用了，而对于某些采用了特有定制协议的设备需要特别处理，请在技术支持的指导下进行配置。
 
-![1526527547592](http://static.toughcloud.net/toughsms/tc_20180517170902_28.png)
+![1526527547592](http://static.toughstruct.net/toughsms/tc_20180517170902_28.png)
 
 >  批量更新的用户, 用户账号在开通时，会复制服务属性到自己的属性，当用户在实际认证时会优先取自有属性，不受服务属性修改影响，如果在修改服务属性时采用批量更新订阅用户，那么所有使用了这个服务的用户的相关属性都会被更新。请根据实际运营需要选择更新方式。
 
@@ -35,15 +35,15 @@
   - 计费周期：商品时段打包模式，如果按天，比如计费周期12个月和计费周期1年是同样的效果。
   - 过期时间：指商品资费的销售有效期，过期后商品资费不允许再新开户或续费，但不影响已经开户的账号。
 
-![1526528647146](http://static.toughcloud.net/toughsms/tc_20180517170933_29.png)
+![1526528647146](http://static.toughstruct.net/toughsms/tc_20180517170933_29.png)
 
 商品添加
 
-![](http://static.toughcloud.net/toughsms/tc_20180517171011_30.png)
+![](http://static.toughstruct.net/toughsms/tc_20180517171011_30.png)
 
 
 ## 收费项目
 
 系统预置的标准固定额度收费项目，比如安装调试，迁移调试，在业务受理时可以选取一项或多项收费项目。每个组织管理自己的收费项目。
 
-![](http://static.toughcloud.net/toughsms/tc_20180517172515_31.png)
+![](http://static.toughstruct.net/toughsms/tc_20180517172515_31.png)
