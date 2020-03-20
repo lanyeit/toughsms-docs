@@ -31,11 +31,11 @@
 
 ## 获取最新的安装文件 
 
-最新版本文件下载地址 http://xspeeder-radiusd-1251458486.file.myqcloud.com/toughsms-latest-linux-x64.tar.bz2 
+最新版本文件下载地址 https://toughsms-upgrade-1251458486.cos.ap-shanghai.myqcloud.com/toughsms-latest-linux-x64.tar.bz2
 
 解压至 /opt 目录
 
-    curl http://xspeeder-radiusd-1251458486.file.myqcloud.com/toughsms-latest-linux-x64.tar.bz2 -o /opt/toughsms-linux-x64.tar.bz2
+    curl https://toughsms-upgrade-1251458486.cos.ap-shanghai.myqcloud.com/toughsms-latest-linux-x64.tar.bz2 -o /opt/toughsms-linux-x64.tar.bz2
     cd /opt
     tar xvf toughsms-linux-x64.tar.bz2
 
